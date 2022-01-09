@@ -1,6 +1,6 @@
 package com.example.kotlinracingcar.domain
 
-class Car(private val name: String, private val position: Int = 0) {
+class Car(private val name: String, val position: Int = 0) {
 
     init {
         require(name.isNotBlank() && name.length <= 5) {
@@ -13,5 +13,9 @@ class Car(private val name: String, private val position: Int = 0) {
             return Car(name, position + 1)
         }
         return this
+    }
+
+    fun isSamePosition(position: Int): Boolean {
+        return this.position == position
     }
 }

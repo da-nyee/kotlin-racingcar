@@ -1,6 +1,6 @@
 package com.example.kotlinracingcar.domain
 
-class Cars(private val cars: List<Car>) {
+class Cars(val cars: List<Car>) {
 
     init {
         require(setOf(cars).size == cars.size) {
@@ -12,5 +12,13 @@ class Cars(private val cars: List<Car>) {
         val movedCars = cars.map { car -> car.move(moveStrategy) }
 
         return Cars(movedCars)
+    }
+
+    fun findMaxPosition(): Int {
+        return cars.maxByOrNull { car -> car.position }?.position ?: 0
+    }
+
+    fun findCarsInTheSamePosition(position: Int): Cars {
+        return Cars(cars.filter { car -> car.isSamePosition(position) })
     }
 }
