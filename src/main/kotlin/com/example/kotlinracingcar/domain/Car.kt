@@ -1,6 +1,6 @@
 package com.example.kotlinracingcar.domain
 
-class Car(private val name: String, val position: Int = 0) {
+class Car(val name: String, val position: Int = 0) {
 
     init {
         require(name.isNotBlank() && name.length <= 5) {

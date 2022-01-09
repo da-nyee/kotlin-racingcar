@@ -2,6 +2,7 @@ package com.example.kotlinracingcar.controller
 
 import com.example.kotlinracingcar.domain.*
 import com.example.kotlinracingcar.view.InputView
+import com.example.kotlinracingcar.view.OutputView
 
 class RacingCarController {
 
@@ -10,7 +11,9 @@ class RacingCarController {
         val times = toTimes(InputView.scanTimes())
 
         val game = Game(cars, times)
-        game.race(RandomMoveStrategy())
+        val result = game.race(RandomMoveStrategy())
+
+        OutputView.printResults(result)
     }
 
     private fun toCars(carNames: List<String>): Cars {
