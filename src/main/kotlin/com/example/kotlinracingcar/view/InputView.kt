@@ -11,7 +11,7 @@ class InputView {
             if (carNames!!.contains(",,")) {
                 throw IllegalArgumentException("이름에 쉼표(,)는 연속으로 입력될 수 없습니다.")
             }
-            return carNames.split(",")
+            return carNames.replace(" ", "").split(",")
         }
 
         fun scanTimes(): Int {

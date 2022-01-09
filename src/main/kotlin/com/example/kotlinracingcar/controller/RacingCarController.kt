@@ -17,7 +17,7 @@ class RacingCarController {
     }
 
     private fun toCars(carNames: List<String>): Cars {
-        return Cars(carNames.map { car -> Car(car) })
+        return Cars(carNames.map { name -> Car(name) })
     }
 
     private fun toTimes(times: Int): Times {
