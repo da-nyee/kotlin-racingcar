@@ -1,11 +1,9 @@
 package com.example.kotlinracingcar
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+import com.example.kotlinracingcar.controller.RacingCarController
+import java.util.*
 
-@SpringBootApplication
-class KotlinRacingcarApplication
-
-fun main(args: Array<String>) {
-    runApplication<KotlinRacingcarApplication>(*args)
+fun main() {
+    val racingCarController = RacingCarController()
+    racingCarController.run()
 }
